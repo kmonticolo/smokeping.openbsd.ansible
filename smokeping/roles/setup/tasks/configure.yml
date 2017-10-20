@@ -6,13 +6,16 @@
     group: _smokeping
     state: directory
     mode: 0755
+
 - name: get smokeping configuration # todo zmienic na jinja
-  command: ftp -o /etc/smokeping/config https://raw.githubusercontent.com/kmonticolo/nas.dom/master/smokeping/config
-  args:
-    creates: /etc/smokeping/config
+  get_url:
+    url: https://raw.githubusercontent.com/kmonticolo/nas.dom/master/smokeping/config
+    dest: /etc/smokeping/config
+    checksum: sha256:d9cbe592b7cd4d7abcf01e9e1e215cc8d38f36cc39e3788a5de85d0d70af87be
 
 - name: get nginx configuration # todo zmienic na jinja
-  command: ftp -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/kmonticolo/nas.dom/master/nginx/nginx.conf
-  args:
-    creates: /etc/nginx/nginx.conf
+  get_url:
+    url: https://raw.githubusercontent.com/kmonticolo/nas.dom/master/nginx/nginx.conf
+    dest: /etc/nginx/nginx.conf
+    checksum: sha256:40e7f5fea28885e0ad1c8305241c1bd681cc126b9b8aaa3748788c63fbb5e2cc
 
