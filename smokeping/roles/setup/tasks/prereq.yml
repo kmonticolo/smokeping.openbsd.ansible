@@ -1,0 +1,5 @@
+---
+- name: install python
+  - raw: "PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/6.0/packages/amd64/; pkg_add py-simplejson; ln -sf /usr/local/bin/python2.7 /usr/local/bin/python"
+  #- raw: d$pkg_add py-simplejson
+

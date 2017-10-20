@@ -1,0 +1,14 @@
+---
+- name: unarchive xbase
+  shell: ftp -o - http://ftp.icm.edu.pl/pub/OpenBSD/6.1/amd64/xbase61.tgz | tar zxpfh - -C /
+  args:
+    creates: /usr/X11R6/bin/ 
+
+- name: unarchive xfont
+  shell: ftp -o - http://ftp.icm.edu.pl/pub/OpenBSD/6.1/amd64/xfont61.tgz | tar zxpfh - -C /
+  args:
+    creates: /usr/X11R6/lib/X11/fonts/ 
+
+- name: kick ldconfig
+  command: ldconfig -m /usr/X11R6/lib
+

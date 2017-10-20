@@ -1,0 +1,10 @@
+---
+- name: start services
+  command: /etc/rc.d/{{service_item}} restart
+  #command: /etc/rc.d/{{service_item}} start
+  with_items: 
+  - nginx 
+  - smokeping 
+  - smokeping_fcgi
+  loop_control:
+    loop_var: service_item

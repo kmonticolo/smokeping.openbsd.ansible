@@ -1,0 +1,10 @@
+---
+- name: install packages
+  openbsd_pkg:
+    name: "{{ pkg_item }}"
+    state: present
+  with_items:
+    - nginx 
+    - smokeping
+  loop_control:
+    loop_var: pkg_item

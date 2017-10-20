@@ -1,0 +1,3 @@
+---
+- name: enable services
+  command: rcctl enable nginx smokeping smokeping_fcgi

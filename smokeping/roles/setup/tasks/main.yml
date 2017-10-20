@@ -1,0 +1,12 @@
+---
+- name: include tasks
+  include: "{{ item }}"
+  with_items:
+  #- prereq.yml
+  - xpackages.yml
+  - packages.yml
+  - configure.yml
+  - enable.yml
+  - start.yml
+
+# todo create symlink python

@@ -1,0 +1,18 @@
+---
+- name: create directory
+  file:
+    path: /var/db/smokeping/
+    owner: _smokeping
+    group: _smokeping
+    state: directory
+    mode: 0755
+- name: get smokeping configuration # todo zmienic na jinja
+  command: ftp -o /etc/smokeping/config https://raw.githubusercontent.com/kmonticolo/nas.dom/master/smokeping/config
+  args:
+    creates: /etc/smokeping/config
+
+- name: get nginx configuration # todo zmienic na jinja
+  command: ftp -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/kmonticolo/nas.dom/master/nginx/nginx.conf
+  args:
+    creates: /etc/nginx/nginx.conf
+

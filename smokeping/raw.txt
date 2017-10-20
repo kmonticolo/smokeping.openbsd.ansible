@@ -1,0 +1,2 @@
+ ansible -m raw -a "export PKG_PATH=http://ftp.icm.edu.pl/pub/OpenBSD/6.1/packages/amd64/; pkg_add py-simplejson; ln -sf /usr/local/bin/python2.7 /usr/local/bin/python" -i /home/kmonti/smokeping/inv all
+

@@ -1,0 +1,12 @@
+[openbsd:vars]
+ansible_python_interpreter=/usr/local/bin/python2.7 
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_user=root
+
+[openbsd]
+#192.168.1.117
+#192.168.1.118
+192.168.1.142
+192.168.1.146
+192.168.1.121
+
