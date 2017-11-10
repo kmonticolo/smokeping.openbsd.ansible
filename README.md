@@ -6,7 +6,7 @@ This role installs smokeping on OpenBSD.
 Requirements
 ------------
 
-ansible -m raw -a "export PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/6.1/packages/amd64/; pkg_add py-simplejson; ln -sf /usr/local/bin/python2.7 /usr/bin/python" -i /home/kmonti/inventory
+ansible -m raw -a "export PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/6.1/packages/amd64/; pkg_add py-simplejson; ln -sf /usr/local/bin/python2.7 /usr/bin/python" -i /home/kmonti/inventory smoke
 
 Role Variables
 --------------
