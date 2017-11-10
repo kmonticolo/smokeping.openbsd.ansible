@@ -1,12 +1,12 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role installs smokeping on OpenBSD.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+ansible -m raw -a "export PKG_PATH=http://ftp.eu.openbsd.org/pub/OpenBSD/6.1/packages/amd64/; pkg_add py-simplejson; ln -sf /usr/local/bin/python2.7 /usr/bin/python" -i /home/kmonti/inventory
 
 Role Variables
 --------------
