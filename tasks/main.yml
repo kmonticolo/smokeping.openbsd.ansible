@@ -1,0 +1,8 @@
+---
+# tasks file for ansible-smokeping
+- hosts: smoke
+  tasks:
+    - import_tasks: xtools.yml
+    - import_tasks: packages.yml
+    - import_tasks: config.yml
+    - import_tasks: services.yml

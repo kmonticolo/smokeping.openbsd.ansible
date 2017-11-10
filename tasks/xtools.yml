@@ -1,0 +1,27 @@
+---
+# tasks file for ansible-smokeping
+- name: install packages
+  openbsd_pkg:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - unzip--
+  - gtar--
+
+- name: Unarchive xbase
+  unarchive:
+    src: ftp://ftp.icm.edu.pl/pub/OpenBSD/{{ ansible_kernel }}/{{ ansible_architecture }}/xbase61.tgz
+    dest: /
+    remote_src: yes
+    creates: /usr/X11R6/lib
+
+- name: Unarchive xfont
+  unarchive:
+    src: ftp://ftp.icm.edu.pl/pub/OpenBSD/{{ ansible_kernel }}/{{ ansible_architecture }}/xfont61.tgz
+    dest: /
+    remote_src: yes
+    creates: /usr/X11R6/lib/X11/fonts/
+
+- name: exec ldconfig
+  command:  ldconfig -m /usr/X11R6/lib
+

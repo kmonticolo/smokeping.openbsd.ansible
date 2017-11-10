@@ -1,0 +1,16 @@
+---
+# tasks file for ansible-smokeping
+
+- name: Download smokeping config
+  get_url:
+    url: https://raw.githubusercontent.com/kmonticolo/nas.dom/master/smokeping/config
+    dest: /etc/smokeping/config
+    mode: 0644
+    force: yes
+
+- name: Download nginx config
+  get_url: 
+    url: https://raw.githubusercontent.com/kmonticolo/nas.dom/master/nginx.conf
+    dest: /etc/nginx/nginx.conf
+    mode: 0640
+    force: yes
